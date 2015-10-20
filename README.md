@@ -8,3 +8,7 @@ Functions:
 - Skins
 - Folder navigation
 - Full screen viewing
+
+[project] - MS Visual Studio 2012 project
+
+[src] - only sources and resources
