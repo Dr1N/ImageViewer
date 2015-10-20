@@ -1,0 +1,60 @@
+﻿<Window x:Class="Gallery.FullScreenWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FullScreenWindow" Height="300" Width="300" 
+        WindowStyle="None" ShowInTaskbar="False" Topmost="True" Background="Black" WindowState="Maximized">
+    <Window.Resources>
+        <Storyboard x:Key="story1" SpeedRatio="1.5">
+            <DoubleAnimation Storyboard.TargetName="img_currentImage"
+                                 Storyboard.TargetProperty="Opacity"
+                                 From="0.2" To="1" Duration="0:0:2.5"></DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="img_currentImage"
+                                Storyboard.TargetProperty="RenderTransform.Children[1].Angle"
+                                From="70" To="0" Duration="0:0:2" ></DoubleAnimation>
+
+            <DoubleAnimation Storyboard.TargetName="img_currentImage"
+                                Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX"
+                                From="0" To="1" Duration="0:0:2" AccelerationRatio="1"></DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="img_currentImage"
+                                Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY"
+                                From="0" To="1" Duration="0:0:2" AccelerationRatio="1"></DoubleAnimation>
+
+            <DoubleAnimation Storyboard.TargetName="img_currentImage"
+                                            Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX"
+                                            To="0.98" BeginTime="0:0:2" Duration="0:0:0.05"  DecelerationRatio="1"></DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="img_currentImage"
+                                Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY"
+                                To="0.98" BeginTime="0:0:2" Duration="0:0:0.05" DecelerationRatio="1"></DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="img_currentImage"
+                                            Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX"
+                                            To="1" BeginTime="0:0:2.05" Duration="0:0:0.2"  AccelerationRatio="1"></DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="img_currentImage"
+                                Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY"
+                                To="1" BeginTime="0:0:2.05" Duration="0:0:0.2" AccelerationRatio="1"></DoubleAnimation>
+
+        </Storyboard>
+        <Storyboard x:Key="story2">
+            <DoubleAnimation Storyboard.TargetName="img_currentImage"
+                                 Storyboard.TargetProperty="Opacity"
+                                 From="0" To="1" Duration="0:0:1"/>
+        </Storyboard>
+        <Storyboard x:Key="story3">
+            <DoubleAnimation Storyboard.TargetName="img_currentImage"
+                                 Storyboard.TargetProperty="Width"
+                                 From="1" To="{Binding ElementName=br_image, Path=ActualWidth}" Duration="0:0:1"/>
+        </Storyboard>
+    </Window.Resources>
+    <Grid>
+        <Border Name="br_image" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Image Name="img_currentImage"
+                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform></ScaleTransform>
+                        <RotateTransform></RotateTransform>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Border>
+    </Grid>
+</Window>
