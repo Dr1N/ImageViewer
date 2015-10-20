@@ -63,21 +63,6 @@ namespace Gallery
             this.storyboards.Add((Storyboard)this.FindResource("story2"));
             this.storyboards.Add((Storyboard)this.FindResource("story3"));
 
-            ////Отладка
-
-            ////DirectoryInfo di = new DirectoryInfo(@"d:\My Pictures\Kot\");
-
-            //DirectoryInfo di = new DirectoryInfo(@"f:\Images\");
-            //this.selectedDirectories.Add(di);
-
-            //foreach (FileInfo file in di.GetFiles())
-            //{
-            //    if (this.imageFileExtention.Contains(file.Extension.ToLower()))
-            //    {
-            //        this.imageFiles.Add(file);
-            //    }
-            //}
-
             this.lb_selectedDirectories.Items.Refresh();
             this.lb_imageList.Items.Refresh();
         }
